@@ -365,8 +365,9 @@ body::before {
   line-height: 1.5;
   margin-bottom: 8px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   overflow: hidden;
 }
 
