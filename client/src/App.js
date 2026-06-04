@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { TaskProvider } from "./context/TaskContext";
 import Board from "./components/Board";
+import Login from "./components/Login";
 import "./styles/App.css";
 
-/**
- * App — root component.
- * Wraps the entire dashboard in the TaskProvider so
- * all child components can access global task state.
- */
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  if (!isLoggedIn) {
+    return <Login onLogin={() => setIsLoggedIn(true)} />;
+  }
+
   return (
     <TaskProvider>
-      <Board />
+      <Board onLogout={() => setIsLoggedIn(false)} />
     </TaskProvider>
   );
 }

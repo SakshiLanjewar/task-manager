@@ -10,7 +10,7 @@ import { COLUMN_ORDER } from "../utils/constants";
  * Manages column task slicing, drag-and-drop coordination,
  * and surfaces the TaskForm modal for add/edit operations.
  */
-function Board() {
+function Board({ onLogout }) {
   const { tasks, loading, error, fetchTasks, handleReorder, clearError } = useTaskContext();
   const [showForm, setShowForm] = useState(false);
   const [taskToEdit, setTaskToEdit] = useState(null);
@@ -151,6 +151,8 @@ function Board() {
           <button className="add-task-btn" onClick={openAddForm} aria-label="Add new task">
             + New Task
           </button>
+
+          <button className="logout-btn" onClick={onLogout} title="Logout">🚪 Logout</button>
         </div>
       </header>
 
