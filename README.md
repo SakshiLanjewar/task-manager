@@ -16,6 +16,31 @@ I built this project to practice full-stack development, focusing on clean code 
 7. 📊 Progress Bar — Live completion percentage in the header
 8. 📱 Responsive Design — Works on mobile and desktop
 
+
+## 🔐 Authentication Pages
+1. Sign In (Login)
+
+Enter your registered Email and Password
+Click "Sign In" button
+On success → redirected to your Dashboard
+
+Options available on Sign In page:
+
+🔗 "Forgot Password?" — click to reset your password
+🔗 "Register Here" — click to create a new account
+
+2. Register (Sign Up)
+
+Fill in your Full Name, Email, Password, Confirm Password
+Click "Register" → automatically logged in and redirected to Dashboard
+
+
+3. Forgot Password
+
+Enter your registered Email Address
+Click "Send Reset Link"
+Check your email → Click the reset link → Enter new password ✅
+
 ## 🏗 Project Structure
 
 task-dashboard/
@@ -25,16 +50,25 @@ task-dashboard/
 │   ├── middleware/validation.js
 │   └── index.js
 └── client/
-    └── src/
-        ├── components/
-        │   ├── Board.js
-        │   ├── KanbanColumn.js
-        │   ├── TaskCard.js
-        │   └── TaskForm.js
-        ├── context/TaskContext.js
-        ├── utils/api.js
-        └── styles/App.css
-
+    ├── public/
+    │   └── index.html
+    ├── src/
+    │   ├── components/
+    │   │   ├── Board.js
+    │   │   ├── KanbanColumn.js
+    │   │   ├── TaskCard.js
+    │   │   ├── TaskForm.js
+    │   │   └── Login.js
+    │   ├── styles/
+    │   │   ├── App.css
+    │   │   └── Login.css
+    │   ├── context/TaskContext.js
+    │   ├── utils/
+    │   │   ├── api.js
+    │   │   └── constants.js
+    │   ├── App.js
+    │   └── index.js
+    └── package.json
 
 ### 🚀 Getting Started
 
