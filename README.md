@@ -1,7 +1,17 @@
 # 🚀 TaskFlow — MERN Kanban Dashboard
 
-A full-stack **Kanban-style Task Management App** built with the **MERN stack** — MongoDB, Express, React, and Node.js.
-I built this project to practice full-stack development, focusing on clean code structure, REST API design, and a smooth drag-and-drop UI experience.
+> **Live Demo:** [https://task-manager-ten-delta-56.vercel.app](https://task-manager-ten-delta-56.vercel.app)
+
+A full-stack Kanban-style Task Management App built with the **MERN stack** — MongoDB, Express, React, and Node.js. Built to practice full-stack development, focusing on clean code structure, REST API design, and a smooth drag-and-drop UI experience.
+
+---
+
+## 🌐 Live Links
+
+| Service | URL |
+|---------|-----|
+| 🖥️ Frontend (Vercel) | [https://task-manager-ten-delta-56.vercel.app](https://task-manager-ten-delta-56.vercel.app) |
+| ⚙️ Backend API (Railway) | [https://task-manager-production-51a6.up.railway.app/api/health](https://task-manager-production-51a6.up.railway.app/api/health) |
 
 ---
 
@@ -20,25 +30,40 @@ I built this project to practice full-stack development, focusing on clean code 
 
 ---
 
-## 🔐 Authentication Pages
+## ☁️ Deployment Guide
 
-### 1. Sign In (Login)
-- Enter your registered **Email** and **Password**
-- Click **"Sign In"** button
-- On success → redirected to your Dashboard
+### 🖥️ Frontend — Deploy on Vercel
 
-**Options available on Sign In page:**
-- 🔗 **"Forgot Password?"** — click to reset your password
-- 🔗 **"Register Here"** — click to create a new account
+1. Push your code to **GitHub**
+2. Go to [vercel.com](https://vercel.com) → **New Project** → Import your GitHub repo
+3. Set **Root Directory** to `client`
+4. Add Environment Variable:
+   ```
+   REACT_APP_API_URL = https://your-backend.up.railway.app/api
+   ```
+5. Click **Deploy** ✅
 
-### 2. Register (Sign Up)
-- Fill in your **Full Name, Email, Password, Confirm Password**
-- Click **"Register"** → automatically logged in and redirected to Dashboard
+---
 
-### 3. Forgot Password
-- Enter your registered **Email Address**
-- Click **"Send Reset Link"**
-- Check your email → Click the reset link → Enter new password ✅
+### ⚙️ Backend — Deploy on Railway
+
+1. Go to [railway.app](https://railway.app) → **New Project** → Deploy from GitHub
+2. Select your repo → Set **Root Directory** to `server`
+3. Add these Environment Variables in Railway:
+   ```
+   MONGO_URI = your_mongodb_connection_string
+   CLIENT_URL = https://your-frontend.vercel.app
+   PORT = 5000
+   ```
+4. Railway will auto-deploy on every `git push` ✅
+
+---
+
+### 🗄️ Database — MongoDB on Railway
+
+1. In Railway → **New Service** → **MongoDB**
+2. Copy the `MONGO_URI` from Variables tab
+3. Paste it in your backend service Variables ✅
 
 ---
 
@@ -75,7 +100,7 @@ task-dashboard/
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Local Setup)
 
 ### Requirements
 - Node.js v18 or higher
@@ -94,8 +119,8 @@ cp server/.env.example server/.env
 npm run dev
 ```
 
-- **Backend:** http://localhost:5000
-- **Frontend:** http://localhost:3000
+- Backend: http://localhost:5000
+- Frontend: http://localhost:3000
 
 ---
 
@@ -119,13 +144,13 @@ npm run dev
 
 ## 🛠 Tech Stack
 
-**Backend**
+### Backend
 - Node.js + Express 4
 - MongoDB + Mongoose 7
 - express-validator (input validation)
 - dotenv, cors
 
-**Frontend**
+### Frontend
 - React 18 (functional components + hooks)
 - React Context + useReducer (state management)
 - @hello-pangea/dnd (drag and drop)
@@ -150,17 +175,17 @@ npm run dev
 
 ## 📌 How It Works
 
-1. Tasks are stored in MongoDB with a `status` (todo / inprogress / done) and `order` field
-2. When a card is dragged, the UI updates instantly and syncs with the backend in the background
-3. If the API call fails, the board automatically rolls back to the previous state
-4. Both frontend and backend validate inputs independently
+- Tasks are stored in **MongoDB** with a `status` (todo / inprogress / done) and `order` field
+- When a card is dragged, the UI updates instantly and syncs with the backend in the background
+- If the API call fails, the board automatically rolls back to the previous state
+- Both frontend and backend validate inputs independently
 
 ---
 
 ## 👩‍💻 Author
 
-**Sakshi Lanjewar**  
-B.Tech — Artificial Intelligence & Data Science Engineering Student  
+**Sakshi Lanjewar**
+B.Tech — Artificial Intelligence & Data Science Engineering Student
 Passionate about Full Stack Development, MERN Stack, Artificial Intelligence, and building modern web applications.
 
 ---
